@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Main Page
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/static/css/mainpage.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" media="all">
+
+</head>
+<body>
+<!--logo开始-->
+<div class="logo"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> ATM</div>
+<!--logo结束-->
+<br>
+<br>
+<br>
+<br>
+
+<div class="all container">
+    <br>
+<p class="title">您好 ! 尊敬的{{user.username}} ! </p>
+    <p class="title">请选择以下业务</p>
+    <br>
+<p>
+    <a style="text-decoration: none" href="/deposit/">
+    存款
+    </a>
+</p>
+<p>
+    <a style="text-decoration: none" href="/withdraw/">
+    取款
+    </a>
+</p>
+<p>
+    <a style="text-decoration: none" href="/transfer/">
+    转账
+    </a>
+</p>
+<p>
+    <a style="text-decoration: none" href="/inquery/">
+    查询
+    </a>
+</p>
+<p>
+    <a style="text-decoration: none" href="/changepassword/">
+    修改密码
+    </a>
+</p>
+<p>
+    <a style="text-decoration: none" href="/ecashmainpage/">
+    电子现金
+    </a>
+</p>
+<p>
+    <a style="text-decoration: none" href="/account/login">
+        注销
+    </a>
+    </p>
+</div>
+</body>
+</html>

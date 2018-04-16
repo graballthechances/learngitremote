@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        E-cash Transfer In Page
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/static/css/login.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" media="all">
+
+</head>
+<body>
+<!--logo开始-->
+<div class="logo"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> ATM</div>
+<!--logo结束-->
+<br>
+<br>
+<div class="all container">
+    <br>
+    <p class="login">
+        取出电子现金
+    </p>
+{% if errors %}
+    <li class="error">
+        {%for error in errors%}
+        <p style="color: red">
+            Please correct the error:{{error}}
+        </p>
+        {%endfor%}
+    </li>
+    {%endif%}
+    <br>
+<form method="POST" action=".">{%csrf_token%}
+    <div class="row">
+        <div class="col-xs-4  col-xs-offset-4">
+    <p class="hint">请输入要转出的金额数目</p>
+        <input class="form-control"type="text" name="num" placeholder="amount">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-2  col-xs-offset-5">
+    <input class="form-control" type="submit" name="提交" value="提交">
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

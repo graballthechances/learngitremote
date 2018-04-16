@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{%load static%}
+{%load staticfiles%}
+<html>
+<head>
+	<title>Deposit page</title>
+	<link rel="stylesheet" href="/static/css/login.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" media="all">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!--logo开始-->
+<div class="logo"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> ATM</div>
+<!--logo结束-->
+<br>
+<br>
+<div class="all container">
+	<p class="login">
+		转账
+	</p>
+
+	{% if errors %}
+	<li class="error">
+		{%for error in errors%}
+		<p style="color: red">
+			Please correct the error:{{error}}
+		</p>
+		{%endfor%}
+	</li>
+	{%endif%}
+	<br>
+	<form method="POST" action=".">{% csrf_token %}
+		<div class="row">
+			<div class="col-xs-4  col-xs-offset-4">
+	<p class="hint">请输入转账的币种</p>
+		<input class="form-control" type="text" name="currency" placeholder="港币、美元、人民币">
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-4  col-xs-offset-4">
+	<p class="hint">请输入转账的金额</p>
+		<input class="form-control" type="text" name="amount" placeholder="金额数目">
+			</div>
+		</div>
+		<br>
+				<div class="row">
+					<div class="col-xs-4  col-xs-offset-4">
+	<p class="hint">请输入转入的银行账号</p>
+	<input class="form-control" type="text" name="account" placeholder="转入的账号">
+					</div>
+				</div>
+		<br>
+
+								<div class="row">
+									<div class="col-xs-2  col-xs-offset-5">
+		<input class="form-control login"  type="submit" name="sub" placeholder="submit" value="提交">
+									</div>
+								</div>
+	</form>
+	<br>
+</div>
+</body>
+</html>

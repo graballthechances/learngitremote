@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{%load static%}
+{%load staticfiles%}
+<html>
+<head>
+    <title>Welcome login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/static/css/login.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" media="all">
+
+</head>
+<body>
+    <!--logo开始-->
+    <div class="logo"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> ATM</div>
+    <!--logo结束-->
+    <br>
+    <div class="all container">
+<p class="login">
+    Account Login
+</p>
+
+{% if errors%}
+<li class="error">
+    {%for error in errors%}
+    <p style="color: red">
+        Please correct the error:{{error}}
+    </p>
+    {%endfor%}
+</li>
+{%endif%}
+
+<form action="" method="post">{% csrf_token %}
+    <div class="row">
+        <div class="col-xs-4  col-xs-offset-4">
+    <input type="text" class="form-control" placeholder="please input account" name="account">
+        </div>
+    </div>
+            <br>
+    <div class="row">
+        <div class="col-xs-4  col-xs-offset-4">
+    <input type="password" class="form-control" placeholder="please input password" name="password">
+    </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-2  col-xs-offset-5">
+    <input type="submit" class="form-control login" placeholder="Login" value="Login">
+        </div>
+    </div>
+            <br>
+    <a href="/account/register" class="register">register new account</a>
+</form>
+    </div>
+</body>
+</html>
